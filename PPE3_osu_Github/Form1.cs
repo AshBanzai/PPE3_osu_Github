@@ -16,5 +16,10 @@ namespace PPE3_osu_Github
         {
             InitializeComponent();
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
