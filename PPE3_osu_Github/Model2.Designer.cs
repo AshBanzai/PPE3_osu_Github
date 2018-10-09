@@ -1,4 +1,4 @@
-﻿// La génération de code T4 est activée pour le modèle 'C:\Users\btssio\Source\Repos\Duverger\PPE3_osu_Github\PPE3_osu_Github\Model2.edmx'. 
+﻿// La génération de code T4 est activée pour le modèle 'C:\Users\btssio\Source\Repos\Plantard_Bouley\PPE3_osu_Github\PPE3_osu_Github\Model2.edmx'. 
 // Pour activer la génération de code héritée, définissez la valeur de la propriété
 // du concepteur 'Stratégie de génération de code' sur 'ObjectContext hérité'. Cette propriété est disponible dans la fenêtre Propriétés lorsque le modèle
 //  est ouvert dans le concepteur.

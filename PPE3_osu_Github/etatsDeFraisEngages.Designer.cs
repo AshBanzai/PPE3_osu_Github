@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -39,14 +40,19 @@
             this.label5 = new System.Windows.Forms.Label();
             this.dgvFraisForfais = new System.Windows.Forms.DataGridView();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.bsForfait = new System.Windows.Forms.BindingSource(this.components);
+            this.bsHorsForfait = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFraisForfais)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsForfait)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsHorsForfait)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.MidnightBlue;
@@ -102,6 +108,8 @@
             // 
             // pictureBox1
             // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox1.Image = global::PPE3_osu_Github.Properties.Resources.petit_logo;
             this.pictureBox1.Location = new System.Drawing.Point(395, 12);
             this.pictureBox1.Name = "pictureBox1";
@@ -176,10 +184,14 @@
             this.Controls.Add(this.label1);
             this.Name = "etatsDeFraisEngages";
             this.Text = "etatsDeFraisEngages";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.etatsDeFraisEngages_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFraisForfais)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsForfait)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsHorsForfait)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -197,5 +209,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.DataGridView dgvFraisForfais;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.BindingSource bsForfait;
+        private System.Windows.Forms.BindingSource bsHorsForfait;
     }
 }
