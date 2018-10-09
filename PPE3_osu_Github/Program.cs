@@ -16,9 +16,10 @@ namespace PPE3_osu_Github
         [STAThread]
         static void Main()
         {
+            modelefanch.init();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new etatsDeFraisEngages());
         }
     }
 }
