@@ -57,8 +57,8 @@ namespace PPE3_osu_Github
         {
             bsTest.DataSource = Modele.TestConnexion();
             dgvTest.DataSource = bsTest;
-            dgvTest.Columns[0].HeaderText = "NOM";
-            dgvTest.Columns[1].HeaderText = "PRENOM";
+            dgvTest.Columns[0].HeaderText = "ID";
+            dgvTest.Columns[1].HeaderText = "MDP";
 
         }
     }
