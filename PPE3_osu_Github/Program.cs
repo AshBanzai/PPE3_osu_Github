@@ -10,6 +10,7 @@ namespace PPE3_osu_Github
 {
     static class Program
     {
+
         [STAThread]
         static void Main()
         {
