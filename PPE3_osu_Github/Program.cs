@@ -18,7 +18,8 @@ namespace PPE3_osu_Github
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Modele2.init();
+            Application.Run(new VoirLesRapports());
         }
     }
 }
