@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace PPE3_osu_Github
 {
-    public partial class Form1 : Form
+    public partial class FMenu : Form
     {
-        public Form1()
+        public FMenu()
         {
             InitializeComponent();
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

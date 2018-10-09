@@ -24,10 +24,9 @@ namespace PPE3_osu_Github
 
         }
 
-        public static Object MedecinsSuivis()
+        public static Object MedecinsSuivis(string idVisiteur)
         {
-            List<int> idRapports = new List<int>;
-            idRapports
+            List<int> idRapports = new List<int>();
             var LQuery = maConnexion.MEDECIN.ToList()
                            .Where(x => x.idMedecin == x.idMedecin)
                            .Select(x => new { x.nom, x.prenom });
