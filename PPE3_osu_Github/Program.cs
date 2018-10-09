@@ -16,11 +16,10 @@ namespace PPE3_osu_Github
         [STAThread]
         static void Main()
         {
-            modelefanch.init();
-            Modele2.init();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new VoirLesRapports());
+            Modele.init();
+            Application.Run(new FConnexion());
         }
     }
 }
