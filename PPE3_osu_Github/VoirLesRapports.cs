@@ -23,7 +23,10 @@ namespace PPE3_osu_Github
 
         private void VoirLesRapports_Load(object sender, EventArgs e)
         {
-
+            cboMedecinsSuivis.ValueMember = "idRapport";
+            cboMedecinsSuivis.DisplayMember = "idRapport";
+            bsMedecinsSuivis.DataSource = Modele2.RapportsDuVisiteur("a13");     //MedecinsSuivis();
+            cboMedecinsSuivis.DataSource = bsMedecinsSuivis;
         }
 
         private void VoirLesRapports_FormClosing(object sender, FormClosingEventArgs e)

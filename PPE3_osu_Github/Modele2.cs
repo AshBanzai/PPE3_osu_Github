@@ -15,8 +15,19 @@ namespace PPE3_osu_Github
             maConnexion = new OSUppe3Entities1();
         }
 
-        public static Object MedecinsSuivis(string idVisiteur)
+        public static Object RapportsDuVisiteur(string idVisiteur)
         {
+            var LQuery = maConnexion.RAPPORT.ToList()
+                           .Where(x => x.idVisiteur == idVisiteur)
+                           .Select(x => new { x.idRapport });
+            return LQuery.ToList();
+
+        }
+
+        public static Object MedecinsSuivis()
+        {
+            List<int> idRapports = new List<int>;
+            idRapports
             var LQuery = maConnexion.MEDECIN.ToList()
                            .Where(x => x.idMedecin == x.idMedecin)
                            .Select(x => new { x.nom, x.prenom });
