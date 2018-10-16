@@ -35,7 +35,7 @@ namespace PPE3_osu_Github
         
             string id = txtIdentifiant.ToString();
             string mdp = txtPasswd.ToString();
-            bool test = Modele.valideConnexion(id, mdp);
+            bool test = Modele.validConnexion(id, mdp);
             if ( test == true)
             {
                 MessageBox.Show("OouuuuuuuuuuuuiiiiiiiiiiiiiiiiiiiiiiiIIii!");

@@ -22,6 +22,13 @@ namespace PPE3_osu_Github
 
 
         }
+        public static Object DonneNomVisiteur(string idVisiteur)
+        {
+            var LQuery = maConnexion.Visiteur.ToList()
+                           .Where(x => x.idVisiteur == idVisiteur)
+                           .Select(x => new { x.nom,x.prenom });
+            return LQuery.ToList();
+        }
 
     }
 }

@@ -17,6 +17,8 @@ namespace PPE3_osu_Github
         {
             InitializeComponent();
             maConnexion = new OSUppe3Entities1();
+            //change le label mois par le mois de la demande
+            //lblMatricule.Text = Modele3.DonneNomVisiteur("uipol");
         }
        
 
@@ -28,6 +30,11 @@ namespace PPE3_osu_Github
         private void etatsDeFraisEngages_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnQuitter_Click(object sender, EventArgs e)
+        {
+            Form.ActiveForm.Close();
         }
     }
 }
