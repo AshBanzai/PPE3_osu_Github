@@ -16,5 +16,24 @@ namespace PPE3_osu_Github
         {
             InitializeComponent();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            VoirLesRapports f = new VoirLesRapports();
+            f.Show();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            
+            FConnexion f = new FConnexion();
+            f.Show();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            etatsDeFraisEngages f = new etatsDeFraisEngages();
+            f.Show();
+        }
     }
 }

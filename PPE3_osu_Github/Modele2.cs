@@ -21,12 +21,10 @@ namespace PPE3_osu_Github
                            .Where(x => x.idVisiteur == idVisiteur)
                            .Select(x => new { x.idRapport });
             return LQuery.ToList();
-
         }
 
         public static Object MedecinsSuivis(string idVisiteur)
         {
-            List<int> idRapports = new List<int>();
             var LQuery = maConnexion.MEDECIN.ToList()
                            .Where(x => x.idMedecin == x.idMedecin)
                            .Select(x => new { x.nom, x.prenom });

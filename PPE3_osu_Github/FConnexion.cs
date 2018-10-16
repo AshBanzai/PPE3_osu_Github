@@ -32,20 +32,18 @@ namespace PPE3_osu_Github
 
         private void button2_Click(object sender, EventArgs e)
         {
-            // Test avec dandre
+        
             string id = txtIdentifiant.ToString();
-            string mp = txtPasswd.ToString();
-            if (Modele.validConnexion(id, mp) == true)
+            string mdp = txtPasswd.ToString();
+            bool test = Modele.valideConnexion(id, mdp);
+            if ( test == true)
             {
                 MessageBox.Show("OouuuuuuuuuuuuiiiiiiiiiiiiiiiiiiiiiiiIIii!");
             }
             else
             {
                 MessageBox.Show("non!");
-            }
-            
-            
-             //Message Box pour afficher le message d'erreur
+            } 
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -59,6 +57,11 @@ namespace PPE3_osu_Github
             dgvTest.DataSource = bsTest;
             dgvTest.Columns[0].HeaderText = "ID";
             dgvTest.Columns[1].HeaderText = "MDP";
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
 
         }
     }
