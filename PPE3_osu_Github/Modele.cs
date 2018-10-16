@@ -30,7 +30,7 @@ namespace PPE3_osu_Github
             return sb.ToString();
         }
 
-        public static bool validConnexion(string id, string mp)
+        public static bool valideConnexion(string id, string mp)
         {
             bool vRetour =false;
             var LQuery = maConnexion.Visiteur.ToList()

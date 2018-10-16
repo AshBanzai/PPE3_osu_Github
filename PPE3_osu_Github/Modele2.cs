@@ -23,11 +23,12 @@ namespace PPE3_osu_Github
             return LQuery.ToList();
         }
 
-        public static Object MedecinsSuivis(string idVisiteur)
+        public static Object MedecinsSuivis(/*string idVisiteur*/)
         {
             var LQuery = maConnexion.MEDECIN.ToList()
                            .Where(x => x.idMedecin == x.idMedecin)
-                           .Select(x => new { x.nom, x.prenom });
+                           .Select(x => new { x.nom, x.prenom })
+                           .OrderBy(x => x.nom);
             return LQuery.ToList();
         }
     }
