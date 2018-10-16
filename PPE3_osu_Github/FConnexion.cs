@@ -38,11 +38,12 @@ namespace PPE3_osu_Github
             bool test = Modele.valideConnexion(id, mdp);
             if ( test == true)
             {
-                MessageBox.Show("Oouii !!");
+                FMenu f = new FMenu();
+                f.Show();
             }
             else
             {
-                MessageBox.Show("non!");
+                MessageBox.Show(" L'identifiant ou le mots de passe est incorrect !");
             } 
         }
 

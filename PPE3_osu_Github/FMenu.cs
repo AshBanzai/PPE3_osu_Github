@@ -23,13 +23,7 @@ namespace PPE3_osu_Github
             f.Show();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            
-            FConnexion f = new FConnexion();
-            f.Show();
-        }
-
+     
         private void button3_Click(object sender, EventArgs e)
         {
             etatsDeFraisEngages f = new etatsDeFraisEngages();
