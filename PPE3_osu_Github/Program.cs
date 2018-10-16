@@ -10,9 +10,7 @@ namespace PPE3_osu_Github
 {
     static class Program
     {
-        /// <summary>
-        /// Point d'entrée principal de l'application.
-        /// </summary>
+
         [STAThread]
         static void Main()
         {

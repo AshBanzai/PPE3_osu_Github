@@ -176,6 +176,7 @@
             this.Controls.Add(this.label1);
             this.Name = "etatsDeFraisEngages";
             this.Text = "etatsDeFraisEngages";
+            this.Load += new System.EventHandler(this.etatsDeFraisEngages_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFraisForfais)).EndInit();

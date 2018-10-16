@@ -12,9 +12,11 @@ namespace PPE3_osu_Github
     class Modele
     {
         private static OSUppe3Entities1 maConnexion;
-        private static Visiteur visiteurConnecte;
-        private static bool connexionValide;
 
+        public static void init()
+        {
+            maConnexion = new OSUppe3Entities1();
+        }
 
         private static string test(string PasswdSaisi)
         {
@@ -41,7 +43,15 @@ namespace PPE3_osu_Github
             }
          return vRetour;
         }
-       
+
+        public static Object TestConnexion()
+        {
+            var LQuery = maConnexion.Visiteur.ToList()
+                           .Select(x => new { x.identifiant, x.password })
+                           .OrderBy(x=> x.identifiant);
+            return LQuery.ToList();
+        }
+
     }  
 
 
