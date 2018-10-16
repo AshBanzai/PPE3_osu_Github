@@ -36,9 +36,10 @@ namespace PPE3_osu_Github
             var LQuery = maConnexion.Visiteur.ToList()
                            .Where(x => x.identifiant==id)
                            .Select(x => new { x.identifiant, x.password });
+            
             foreach (var v in LQuery)
             {
-                if (v.password == "37f2381c9a729782c38410b1ea5b8191")
+                if (v.password == mp)
                 { vRetour = true; }
             }
          return vRetour;

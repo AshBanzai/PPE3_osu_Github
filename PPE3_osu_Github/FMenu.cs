@@ -35,5 +35,10 @@ namespace PPE3_osu_Github
             etatsDeFraisEngages f = new etatsDeFraisEngages();
             f.Show();
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Form.ActiveForm.Close();
+        }
     }
 }
