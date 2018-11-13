@@ -25,7 +25,7 @@ namespace PPE3_osu_Github
         {
             cboMedecinsSuivis.ValueMember = "idMedecin";
             cboMedecinsSuivis.DisplayMember = "nom";
-            bsMedecinsSuivis.DataSource = Modele2.MedecinsSuivis();     //MedecinsSuivis();
+            bsMedecinsSuivis.DataSource = Modele3.DonneNomVisiteur();     //MedecinsSuivis();
             cboMedecinsSuivis.DataSource = bsMedecinsSuivis;
         }
 

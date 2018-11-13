@@ -22,13 +22,32 @@ namespace PPE3_osu_Github
 
 
         }
-        public static Object DonneNomVisiteur(string idVisiteur)
+        public static Object DonneNomVisiteur()
         {
             var LQuery = maConnexion.Visiteur.ToList()
-                           .Where(x => x.idVisiteur == idVisiteur)
-                           .Select(x => new { x.nom,x.prenom });
+                           .Select(x => new { x.nom})
+                           .OrderBy(x => x.nom);
             return LQuery.ToList();
         }
+        public static Object DonneIdVisiteur(string nom)
+        {
+            var LQuery = maConnexion.Visiteur.ToList()
+                .Where(x => x.nom == x.nom)
+                .Select(x => new { x.idVisiteur });
+            return LQuery.ToList();
+
+        }
+        /*public static Object ListeFraisForfais(string idVisiteur)
+        {
+            var LQuery = maConnexion.fichefrais.ToList()
+                           .Where(x => x.idVisiteur == idVisiteur and x.idVisiteur)
+                           .Select(x => new { x. })
+                           .OrderBy(x => x.nomCompositeur);
+            return LQuery.ToList();
+
+        }*/
+
+
 
     }
 }
