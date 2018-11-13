@@ -33,7 +33,7 @@
             this.cboMedecinsSuivis = new System.Windows.Forms.ComboBox();
             this.lblNuméro = new System.Windows.Forms.Label();
             this.lblListeDesRapports = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvListeDesRapports = new System.Windows.Forms.DataGridView();
             this.lblDateDeVisite = new System.Windows.Forms.Label();
             this.bsMedecinsSuivis = new System.Windows.Forms.BindingSource(this.components);
             this.txtDateDeVisite = new System.Windows.Forms.TextBox();
@@ -43,12 +43,12 @@
             this.lblLesMedicamentsPrescrits = new System.Windows.Forms.Label();
             this.bsListeDesRapports = new System.Windows.Forms.BindingSource(this.components);
             this.bsMedicamentsPrescris = new System.Windows.Forms.BindingSource(this.components);
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.dgvListeDesMedicaments = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvListeDesRapports)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsMedecinsSuivis)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsListeDesRapports)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsMedicamentsPrescris)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvListeDesMedicaments)).BeginInit();
             this.SuspendLayout();
             // 
             // lblMedecinsSuivis
@@ -86,16 +86,16 @@
             this.lblListeDesRapports.TabIndex = 3;
             this.lblListeDesRapports.Text = "Liste des rapports effectués :";
             // 
-            // dataGridView1
+            // dgvListeDesRapports
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 84);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(357, 210);
-            this.dataGridView1.TabIndex = 4;
+            this.dgvListeDesRapports.AllowUserToAddRows = false;
+            this.dgvListeDesRapports.AllowUserToDeleteRows = false;
+            this.dgvListeDesRapports.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvListeDesRapports.Location = new System.Drawing.Point(12, 84);
+            this.dgvListeDesRapports.Name = "dgvListeDesRapports";
+            this.dgvListeDesRapports.ReadOnly = true;
+            this.dgvListeDesRapports.Size = new System.Drawing.Size(357, 210);
+            this.dgvListeDesRapports.TabIndex = 4;
             // 
             // lblDateDeVisite
             // 
@@ -148,27 +148,27 @@
             this.lblLesMedicamentsPrescrits.TabIndex = 10;
             this.lblLesMedicamentsPrescrits.Text = "Les médicaments prescrits :";
             // 
-            // dataGridView2
+            // dgvListeDesMedicaments
             // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(378, 182);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(283, 112);
-            this.dataGridView2.TabIndex = 11;
+            this.dgvListeDesMedicaments.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvListeDesMedicaments.Location = new System.Drawing.Point(378, 182);
+            this.dgvListeDesMedicaments.Name = "dgvListeDesMedicaments";
+            this.dgvListeDesMedicaments.Size = new System.Drawing.Size(283, 112);
+            this.dgvListeDesMedicaments.TabIndex = 11;
             // 
             // VoirLesRapports
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(673, 306);
-            this.Controls.Add(this.dataGridView2);
+            this.Controls.Add(this.dgvListeDesMedicaments);
             this.Controls.Add(this.lblLesMedicamentsPrescrits);
             this.Controls.Add(this.txtMotif);
             this.Controls.Add(this.lblMotif);
             this.Controls.Add(this.txtNuméro);
             this.Controls.Add(this.txtDateDeVisite);
             this.Controls.Add(this.lblDateDeVisite);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvListeDesRapports);
             this.Controls.Add(this.lblListeDesRapports);
             this.Controls.Add(this.lblNuméro);
             this.Controls.Add(this.cboMedecinsSuivis);
@@ -177,11 +177,11 @@
             this.Text = "VoirLesRapports";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.VoirLesRapports_FormClosing);
             this.Load += new System.EventHandler(this.VoirLesRapports_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvListeDesRapports)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsMedecinsSuivis)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsListeDesRapports)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsMedicamentsPrescris)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvListeDesMedicaments)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -193,7 +193,7 @@
         private System.Windows.Forms.ComboBox cboMedecinsSuivis;
         private System.Windows.Forms.Label lblNuméro;
         private System.Windows.Forms.Label lblListeDesRapports;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvListeDesRapports;
         private System.Windows.Forms.Label lblDateDeVisite;
         private System.Windows.Forms.BindingSource bsMedecinsSuivis;
         private System.Windows.Forms.TextBox txtDateDeVisite;
@@ -203,6 +203,6 @@
         private System.Windows.Forms.Label lblLesMedicamentsPrescrits;
         private System.Windows.Forms.BindingSource bsListeDesRapports;
         private System.Windows.Forms.BindingSource bsMedicamentsPrescris;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridView dgvListeDesMedicaments;
     }
 }

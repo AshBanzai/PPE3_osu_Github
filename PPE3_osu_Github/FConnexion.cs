@@ -33,16 +33,17 @@ namespace PPE3_osu_Github
         private void button2_Click(object sender, EventArgs e)
         {
         
-            string id = txtIdentifiant.ToString();
-            string mdp = txtPasswd.ToString();
-            bool test = Modele.validConnexion(id, mdp);
+            string id = txtIdentifiant.Text;
+            string mdp = txtPasswd.Text;
+            bool test = Modele.valideConnexion(id, mdp);
             if ( test == true)
             {
-                MessageBox.Show("OouuuuuuuuuuuuiiiiiiiiiiiiiiiiiiiiiiiIIii!");
+                FMenu f = new FMenu();
+                f.Show();
             }
             else
             {
-                MessageBox.Show("non!");
+                MessageBox.Show(" L'identifiant ou le mots de passe est incorrect !");
             } 
         }
 
@@ -53,6 +54,7 @@ namespace PPE3_osu_Github
 
         private void btnTest_Click(object sender, EventArgs e)
         {
+           
             bsTest.DataSource = Modele.TestConnexion();
             dgvTest.DataSource = bsTest;
             dgvTest.Columns[0].HeaderText = "ID";

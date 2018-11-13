@@ -159,6 +159,9 @@
     <EmbeddedResource Include="FConnexion.resx">
       <DependentUpon>FConnexion.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FMenu.resx">
+      <DependentUpon>FMenu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
