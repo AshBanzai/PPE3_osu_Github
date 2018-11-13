@@ -132,6 +132,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Name = "FConnexion";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.FConnexion_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTest)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsTest)).EndInit();
