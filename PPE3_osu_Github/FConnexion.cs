@@ -32,12 +32,14 @@ namespace PPE3_osu_Github
 
         private void button2_Click(object sender, EventArgs e)
         {
-        
+            
             string id = txtIdentifiant.Text;
             string mdp = txtPasswd.Text;
             bool test = Modele.valideConnexion(id, mdp);
             if ( test == true)
             {
+                //Modele.connexionUtilisateur(id);
+                //Modele.connexionPasswd(mdp);
                 FMenu f = new FMenu();
                 f.Show();
             }

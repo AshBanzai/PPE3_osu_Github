@@ -12,6 +12,8 @@ namespace PPE3_osu_Github
     class Modele
     {
         private static OSUppe3Entities1 maConnexion;
+        private string utilisateurActif;
+        private string mdpActif;
 
         public static void init()
         {
@@ -28,6 +30,16 @@ namespace PPE3_osu_Github
                 sb.Append(hash[i].ToString("x2"));
             }
             return sb.ToString();
+        }
+        public void connexionUtilisateur(string id)
+        {
+            utilisateurActif = id;
+           
+          
+        }
+        public void connexionPasswd(string mdp)
+        {
+            mdpActif = mdp;
         }
 
         public static bool valideConnexion(string id, string mp)
