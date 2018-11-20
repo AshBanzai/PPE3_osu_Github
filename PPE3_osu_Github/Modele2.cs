@@ -15,10 +15,11 @@ namespace PPE3_osu_Github
             maConnexion = new OSUppe3Entities1();
         }
 
+
         public static Object Suivi(string idVisiteur)
         {
             var LQuery = maConnexion.Suivi.ToList()
-                           .Where(x => x.identifiant == idVisiteur)
+                           .Where(x => x.idVisiteur == idVisiteur)
                            .Select(x => new { x.nom_prenom });
             return LQuery.ToList();
         }

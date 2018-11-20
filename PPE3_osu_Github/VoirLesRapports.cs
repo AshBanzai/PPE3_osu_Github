@@ -24,18 +24,13 @@ namespace PPE3_osu_Github
         {
             cboMedecinsSuivis.ValueMember = "idMedecin";
             cboMedecinsSuivis.DisplayMember = "nom_prenom";
-            bsMedecinsSuivis.DataSource = Modele2.Suivi(idVisiteur);     //MedecinsSuivis();
+            bsMedecinsSuivis.DataSource = Modele2.Suivi(idVisiteur);
             cboMedecinsSuivis.DataSource = bsMedecinsSuivis;
         }
-
-
-
-
 
         private void bsMedecinsSuivis_CurrentChanged(object sender, EventArgs e)
         {
             if (fermeture) return;
-            string idVisiteur = "a13";
             bsListeDesRapports.DataSource = Modele2.ListeRapport(idVisiteur);
             dgvListeDesRapports.DataSource = bsListeDesRapports;
             dgvListeDesRapports.Columns["idRapport"].HeaderText = "Numéro";

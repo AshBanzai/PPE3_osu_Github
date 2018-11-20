@@ -12,12 +12,12 @@ namespace PPE3_osu_Github
 {
     public partial class etatsDeFraisEngages : Form
     {
-        string idVisiteur ="a13";
+        string idVisiteur;
         private bool fermeture = false;
         private OSUppe3Entities1 maConnexion;
         public etatsDeFraisEngages(string unIdVisiteur)
         {
-            //this.idVisiteur = unIdVisiteur;
+            this.idVisiteur = unIdVisiteur;
             InitializeComponent();
             maConnexion = new OSUppe3Entities1();            
             //change le label mois par le mois de la demande
