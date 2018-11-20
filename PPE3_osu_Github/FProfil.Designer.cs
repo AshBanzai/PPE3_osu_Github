@@ -31,8 +31,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.lblPseudo = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
@@ -60,6 +58,7 @@
             this.label1.Size = new System.Drawing.Size(81, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "Pseudo actuel :";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // lblPseudo
             // 
@@ -69,6 +68,7 @@
             this.lblPseudo.Size = new System.Drawing.Size(39, 13);
             this.lblPseudo.TabIndex = 1;
             this.lblPseudo.Text = "labe45";
+            this.lblPseudo.Click += new System.EventHandler(this.lblPseudo_Click);
             // 
             // button1
             // 
@@ -78,23 +78,7 @@
             this.button1.TabIndex = 2;
             this.button1.Text = "CHANGER DE PSEUDO";
             this.button1.UseVisualStyleBackColor = true;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(598, 12);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(111, 20);
-            this.textBox1.TabIndex = 3;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(512, 15);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(63, 13);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "nv pseudo :";
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -265,8 +249,6 @@
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.lblPseudo);
             this.Controls.Add(this.label1);
@@ -283,8 +265,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblPseudo;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox3;

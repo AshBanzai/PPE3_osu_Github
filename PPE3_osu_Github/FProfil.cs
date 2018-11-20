@@ -34,5 +34,21 @@ namespace PPE3_osu_Github
         {
             lblPseudo.Text = identifiant;
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            FModifPseudo f = new FModifPseudo(identifiant);
+            f.Show();
+        }
+
+        private void lblPseudo_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
