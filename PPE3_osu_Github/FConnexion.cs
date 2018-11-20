@@ -20,7 +20,7 @@ namespace PPE3_osu_Github
         }
         public static void ThreadProc()
         {
-            Application.Run(new FMenu());
+            //Application.Run(new FMenu());
         }
 
 
@@ -38,7 +38,7 @@ namespace PPE3_osu_Github
             bool test = Modele.valideConnexion(id, mdp);
             if ( test == true)
             {
-                FMenu f = new FMenu();
+                FMenu f = new FMenu(id);
                 f.Show();
             }
             else
@@ -63,6 +63,11 @@ namespace PPE3_osu_Github
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FConnexion_Load(object sender, EventArgs e)
         {
 
         }

@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="OSUppe3Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="OSUppe3Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Etat">
           <Key>
             <PropertyRef Name="id" />
@@ -50,10 +50,12 @@
           <Key>
             <PropertyRef Name="idVisiteur" />
             <PropertyRef Name="mois" />
+            <PropertyRef Name="annee" />
             <PropertyRef Name="idFraisForfait" />
           </Key>
           <Property Name="idVisiteur" Type="char" MaxLength="3" Nullable="false" />
           <Property Name="mois" Type="char" MaxLength="6" Nullable="false" />
+          <Property Name="annee" Type="char" MaxLength="4" Nullable="false" />
           <Property Name="idFraisForfait" Type="char" MaxLength="3" Nullable="false" />
           <Property Name="quantite" Type="int" />
         </EntityType>
@@ -175,6 +177,20 @@
           <Property Name="identifiant" Type="varchar" MaxLength="16" Nullable="false" />
           <Property Name="password" Type="varchar" MaxLength="128" Nullable="false" />
         </EntityType>
+        <!--Erreurs détectées durant la génération :
+avertissement 6002: La table/vue 'OSUppe3.dbo.Suivi' n'a pas de clé primaire définie. La clé a été déduite et la définition a été créée en tant que table/vue en lecture seule.-->
+        <EntityType Name="Suivi">
+          <Key>
+            <PropertyRef Name="idMedecin" />
+            <PropertyRef Name="nom_prenom" />
+            <PropertyRef Name="idVisiteur" />
+            <PropertyRef Name="identifiant" />
+          </Key>
+          <Property Name="idMedecin" Type="int" Nullable="false" />
+          <Property Name="nom_prenom" Type="varchar" MaxLength="61" Nullable="false" />
+          <Property Name="idVisiteur" Type="char" MaxLength="3" Nullable="false" />
+          <Property Name="identifiant" Type="varchar" MaxLength="16" Nullable="false" />
+        </EntityType>
         <Association Name="FK__fichefrai__idEta__1ED998B2">
           <End Role="Etat" Type="Self.Etat" Multiplicity="0..1" />
           <End Role="fichefrais" Type="Self.fichefrais" Multiplicity="*" />
@@ -199,7 +215,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__LigneFrai__idFra__267ABA7A">
+        <Association Name="FK__LigneFrai__idFra__778AC167">
           <End Role="FraisForfait" Type="Self.FraisForfait" Multiplicity="1" />
           <End Role="LigneFraisForfait" Type="Self.LigneFraisForfait" Multiplicity="*" />
           <ReferentialConstraint>
@@ -211,7 +227,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__LigneFraisForfai__25869641">
+        <Association Name="FK__LigneFraisForfai__76969D2E">
           <End Role="fichefrais" Type="Self.fichefrais" Multiplicity="1" />
           <End Role="LigneFraisForfait" Type="Self.LigneFraisForfait" Multiplicity="*" />
           <ReferentialConstraint>
@@ -414,6 +430,14 @@
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Travailler" EntityType="Self.Travailler" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Visiteur" EntityType="Self.Visiteur" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Suivi" EntityType="Self.Suivi" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Suivi].[idMedecin] AS [idMedecin], 
+    [Suivi].[nom_prenom] AS [nom_prenom], 
+    [Suivi].[idVisiteur] AS [idVisiteur], 
+    [Suivi].[identifiant] AS [identifiant]
+    FROM [dbo].[Suivi] AS [Suivi]</DefiningQuery>
+          </EntitySet>
           <AssociationSet Name="FK__fichefrai__idEta__1ED998B2" Association="Self.FK__fichefrai__idEta__1ED998B2">
             <End Role="Etat" EntitySet="Etat" />
             <End Role="fichefrais" EntitySet="fichefrais" />
@@ -422,11 +446,11 @@
             <End Role="Visiteur" EntitySet="Visiteur" />
             <End Role="fichefrais" EntitySet="fichefrais" />
           </AssociationSet>
-          <AssociationSet Name="FK__LigneFrai__idFra__267ABA7A" Association="Self.FK__LigneFrai__idFra__267ABA7A">
+          <AssociationSet Name="FK__LigneFrai__idFra__778AC167" Association="Self.FK__LigneFrai__idFra__778AC167">
             <End Role="FraisForfait" EntitySet="FraisForfait" />
             <End Role="LigneFraisForfait" EntitySet="LigneFraisForfait" />
           </AssociationSet>
-          <AssociationSet Name="FK__LigneFraisForfai__25869641" Association="Self.FK__LigneFraisForfai__25869641">
+          <AssociationSet Name="FK__LigneFraisForfai__76969D2E" Association="Self.FK__LigneFraisForfai__76969D2E">
             <End Role="fichefrais" EntitySet="fichefrais" />
             <End Role="LigneFraisForfait" EntitySet="LigneFraisForfait" />
           </AssociationSet>
@@ -487,8 +511,7 @@
             <End Role="RAPPORT" EntitySet="RAPPORT" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="OSUppe3Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -546,6 +569,7 @@
             <PropertyRef Name="idVisiteur" />
             <PropertyRef Name="mois" />
             <PropertyRef Name="idFraisForfait" />
+            <PropertyRef Name="annee" />
           </Key>
           <Property Name="idVisiteur" Type="String" MaxLength="3" FixedLength="true" Unicode="false" Nullable="false" />
           <Property Name="mois" Type="String" MaxLength="6" FixedLength="true" Unicode="false" Nullable="false" />
@@ -553,6 +577,7 @@
           <Property Name="quantite" Type="Int32" />
           <NavigationProperty Name="fichefrais" Relationship="Self.FK__LigneFraisForfai__25869641" FromRole="LigneFraisForfait" ToRole="fichefrais" />
           <NavigationProperty Name="FraisForfait" Relationship="Self.FK__LigneFrai__idFra__267ABA7A" FromRole="LigneFraisForfait" ToRole="FraisForfait" />
+          <Property Name="annee" Type="String" Nullable="false" MaxLength="4" FixedLength="true" Unicode="false" />
         </EntityType>
         <EntityType Name="LigneFraisHorsForfait">
           <Key>
@@ -974,7 +999,20 @@
             <End Role="Region" EntitySet="Region" />
             <End Role="Visiteur" EntitySet="Visiteur" />
           </AssociationSet>
+          <EntitySet Name="Suivi" EntityType="OSUppe3Model.Suivi" />
         </EntityContainer>
+        <EntityType Name="Suivi">
+          <Key>
+            <PropertyRef Name="idMedecin" />
+            <PropertyRef Name="nom_prenom" />
+            <PropertyRef Name="idVisiteur" />
+            <PropertyRef Name="identifiant" />
+          </Key>
+          <Property Name="idMedecin" Type="Int32" Nullable="false" />
+          <Property Name="nom_prenom" Type="String" Nullable="false" MaxLength="61" FixedLength="false" Unicode="false" />
+          <Property Name="idVisiteur" Type="String" Nullable="false" MaxLength="3" FixedLength="true" Unicode="false" />
+          <Property Name="identifiant" Type="String" Nullable="false" MaxLength="16" FixedLength="false" Unicode="false" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1029,6 +1067,7 @@
           <EntitySetMapping Name="LigneFraisForfait">
             <EntityTypeMapping TypeName="OSUppe3Model.LigneFraisForfait">
               <MappingFragment StoreEntitySet="LigneFraisForfait">
+                <ScalarProperty Name="annee" ColumnName="annee" />
                 <ScalarProperty Name="idVisiteur" ColumnName="idVisiteur" />
                 <ScalarProperty Name="mois" ColumnName="mois" />
                 <ScalarProperty Name="idFraisForfait" ColumnName="idFraisForfait" />
@@ -1164,6 +1203,16 @@
               <ScalarProperty Name="idVisiteur" ColumnName="idVisiteur" />
             </EndProperty>
           </AssociationSetMapping>
+          <EntitySetMapping Name="Suivi">
+            <EntityTypeMapping TypeName="OSUppe3Model.Suivi">
+              <MappingFragment StoreEntitySet="Suivi">
+                <ScalarProperty Name="identifiant" ColumnName="identifiant" />
+                <ScalarProperty Name="idVisiteur" ColumnName="idVisiteur" />
+                <ScalarProperty Name="nom_prenom" ColumnName="nom_prenom" />
+                <ScalarProperty Name="idMedecin" ColumnName="idMedecin" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
