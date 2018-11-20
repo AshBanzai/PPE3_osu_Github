@@ -17,7 +17,7 @@ namespace PPE3_osu_Github
         private OSUppe3Entities1 maConnexion;
         public etatsDeFraisEngages(string unIdVisiteur)
         {
-            this.idVisiteur = unIdVisiteur;
+           this.idVisiteur = "a13";
             InitializeComponent();
             maConnexion = new OSUppe3Entities1();            
             //change le label mois par le mois de la demande
