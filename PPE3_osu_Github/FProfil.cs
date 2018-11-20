@@ -13,10 +13,12 @@ namespace PPE3_osu_Github
     public partial class FProfil : Form
     {
         string identifiant;
-        public FProfil(string unIdentifiant)
+        string mdp;
+        public FProfil(string unIdentifiant, string unMDP)
         {
             InitializeComponent();
             this.identifiant = unIdentifiant;
+            this.mdp = unMDP;
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -41,14 +43,10 @@ namespace PPE3_osu_Github
             f.Show();
         }
 
-        private void lblPseudo_Click(object sender, EventArgs e)
+        private void btnModifMDP_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
+            FModifMDP f = new FModifMDP(identifiant,mdp);
+            f.Show();
         }
     }
 }

@@ -12,11 +12,12 @@ namespace PPE3_osu_Github
 {
     public partial class FMenu : Form
     {
-        string id, identifiant;
-        public FMenu(string unId, string unIdentifiant)
+        string id, identifiant, mdp;
+        public FMenu(string unId, string unIdentifiant, string unMDP)
         {
             this.id = unId;
             this.identifiant = unIdentifiant;
+            this.mdp = unMDP;
             InitializeComponent();
         }
 
@@ -51,7 +52,7 @@ namespace PPE3_osu_Github
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            FProfil f = new FProfil(identifiant);
+            FProfil f = new FProfil(identifiant,mdp);
             f.Show();
         }
     }

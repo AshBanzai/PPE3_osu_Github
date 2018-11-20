@@ -84,6 +84,12 @@
     <Compile Include="FConnexion.Designer.cs">
       <DependentUpon>FConnexion.cs</DependentUpon>
     </Compile>
+    <Compile Include="FModifMDP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FModifMDP.Designer.cs">
+      <DependentUpon>FModifMDP.cs</DependentUpon>
+    </Compile>
     <Compile Include="FModifPseudo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -185,6 +191,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FMenu.resx">
       <DependentUpon>FMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FModifMDP.resx">
+      <DependentUpon>FModifMDP.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FModifPseudo.resx">
       <DependentUpon>FModifPseudo.cs</DependentUpon>

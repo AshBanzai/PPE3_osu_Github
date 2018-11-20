@@ -28,5 +28,30 @@ namespace PPE3_osu_Github
         {
             lblPseudo.Text = identifiant;
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Form.ActiveForm.Close();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (txtNvId.Text != identifiant)
+            {
+                if (txtNvId.Text == txtVerif.Text)
+                {
+                    MessageBox.Show(" Maintenant faut faire la requête ");
+                }
+                else
+                {
+                    MessageBox.Show("  Veuillez vérifier qu'il n'y a pas d'erreur dans votre nouvelle identifiant.\n Vous devez avoir le même identifiant entrer dans 'Nouvelle identifiant' et 'Verification nouvelle identifiant.' ");
+                }
+            }
+            else
+            {
+                MessageBox.Show("  Erreur ! \n Veuillez entrer un identifiant différent de l'ancien. ");
+            }
+            
+        }
     }
 }
