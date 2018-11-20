@@ -12,15 +12,11 @@ namespace PPE3_osu_Github
     using System;
     using System.Collections.Generic;
     
-    public partial class LigneFraisForfait
+    public partial class Suivi
     {
+        public int idMedecin { get; set; }
+        public string nom_prenom { get; set; }
         public string idVisiteur { get; set; }
-        public string mois { get; set; }
-        public string idFraisForfait { get; set; }
-        public Nullable<int> quantite { get; set; }
-        public string annee { get; set; }
-    
-        public virtual fichefrais fichefrais { get; set; }
-        public virtual FraisForfait FraisForfait { get; set; }
+        public string identifiant { get; set; }
     }
 }

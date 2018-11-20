@@ -15,20 +15,21 @@ namespace PPE3_osu_Github
             maConnexion = new OSUppe3Entities1();
         }
 
-        public static Object RapportsDuVisiteur(string idVisiteur)
+
+        public static Object Suivi(string idVisiteur)
         {
-            var LQuery = maConnexion.RAPPORT.ToList()
+            var LQuery = maConnexion.Suivi.ToList()
                            .Where(x => x.idVisiteur == idVisiteur)
-                           .Select(x => new { x.idRapport });
+                           .Select(x => new { x.nom_prenom });
             return LQuery.ToList();
         }
 
-        public static Object MedecinsSuivis(/*string idVisiteur*/)
+        public static Object ListeRapport(string idVisiteur)
         {
-            var LQuery = maConnexion.MEDECIN.ToList()
-                           .Where(x => x.idMedecin == x.idMedecin)
-                           .Select(x => new { x.nom, x.prenom })
-                           .OrderBy(x => x.nom);
+            var LQuery = maConnexion.RAPPORT.ToList()
+                           .Where(x => x.idVisiteur == idVisiteur)
+                           .Select(x => new { x.idRapport,  x.dateRapport, x.MOTIF.libMotif, x.bilan})
+                           .OrderBy(x => x.idRapport);
             return LQuery.ToList();
         }
     }

@@ -42,5 +42,6 @@ namespace PPE3_osu_Github
         public virtual DbSet<SPECIALITE> SPECIALITE { get; set; }
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<Visiteur> Visiteur { get; set; }
+        public virtual DbSet<Suivi> Suivi { get; set; }
     }
 }

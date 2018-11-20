@@ -85,6 +85,7 @@
             this.Controls.Add(this.button2);
             this.Name = "FMenu";
             this.Text = "FMenu";
+            this.Load += new System.EventHandler(this.FMenu_Load);
             this.ResumeLayout(false);
 
         }
