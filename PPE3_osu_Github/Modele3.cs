@@ -24,33 +24,38 @@ namespace PPE3_osu_Github
                            .Select(x => new { x.libelle, x.quantite, x.montant, x.total })                          
                            .OrderBy(x => x.libelle);
             return LQuery.ToList();
-
-
         }
-        public static Object DonneNomVisiteur()
+        public static Object listeautresfrais(string idVisiteur)
         {
+
+            var LQuery = maConnexion.lesautresfrais.ToList()
+                           .Where(x => x.idVisiteur == idVisiteur)
+                           .Select(x => new { x.libelle, x.montant, x.date})
+                           .OrderBy(x => x.libelle);
+            return LQuery.ToList();
+        }
+        public static Object totalfrais(string idVisiteur)
+        {
+
+            var LQuery = maConnexion.total.ToList()
+                           .Where(x => x.idVisiteur == idVisiteur)
+                           .Select(x => new { x.total1 });
+            return LQuery.ToList();
+        }
+        public static string RenvoyerNomVisiteur(string idVisiteur)
+        {
+            string vretour = "";
             var LQuery = maConnexion.Visiteur.ToList()
-                           .Select(x => new { x.nom})
-                           .OrderBy(x => x.nom);
-            return LQuery.ToList();
-        }
-        public static Object DonneIdVisiteur(string nom)
-        {
-            var LQuery = maConnexion.Visiteur.ToList()
-                .Where(x => x.nom == x.nom)
-                .Select(x => new { x.idVisiteur });
-            return LQuery.ToList();
+                           .Where(x => x.idVisiteur == idVisiteur)
+                           .Select(x => new { x.nom, x.prenom });
+            foreach (var v in LQuery)
+            {
+                vretour = v.nom.ToString() + " " + v.prenom.ToString();
+            }
 
+            return vretour;
         }
-        /*public static Object ListeFraisForfais(string idVisiteur)
-        {
-            var LQuery = maConnexion.fichefrais.ToList()
-                           .Where(x => x.idVisiteur == idVisiteur and x.idVisiteur)
-                           .Select(x => new { x. })
-                           .OrderBy(x => x.nomCompositeur);
-            return LQuery.ToList();
 
-        }*/
 
 
 

@@ -32,21 +32,28 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.lblNom = new System.Windows.Forms.Label();
+            this.lblDateMois = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.dgvFraisForfais = new System.Windows.Forms.DataGridView();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvFraisForfait = new System.Windows.Forms.DataGridView();
+            this.dgvFraisHForfait = new System.Windows.Forms.DataGridView();
             this.btnQuitter = new System.Windows.Forms.Button();
-            this.cboVisiteur = new System.Windows.Forms.ComboBox();
             this.bsVisiteur = new System.Windows.Forms.BindingSource(this.components);
+            this.bsAutresFrais = new System.Windows.Forms.BindingSource(this.components);
+            this.bsTotal = new System.Windows.Forms.BindingSource(this.components);
+            this.dgvTotal = new System.Windows.Forms.DataGridView();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.lblNomPrenom = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvFraisForfais)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvFraisForfait)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvFraisHForfait)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsVisiteur)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsAutresFrais)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsTotal)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTotal)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -84,17 +91,6 @@
             this.label3.TabIndex = 4;
             this.label3.Text = "Visiteur";
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.label4.Location = new System.Drawing.Point(43, 263);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(41, 18);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "Mois";
-            // 
             // pictureBox2
             // 
             this.pictureBox2.Image = global::PPE3_osu_Github.Properties.Resources.Signature;
@@ -113,43 +109,43 @@
             this.pictureBox1.TabIndex = 5;
             this.pictureBox1.TabStop = false;
             // 
-            // lblNom
+            // lblDateMois
             // 
-            this.lblNom.AutoSize = true;
-            this.lblNom.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNom.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.lblNom.Location = new System.Drawing.Point(134, 263);
-            this.lblNom.Name = "lblNom";
-            this.lblNom.Size = new System.Drawing.Size(41, 18);
-            this.lblNom.TabIndex = 8;
-            this.lblNom.Text = "Mois";
+            this.lblDateMois.AutoSize = true;
+            this.lblDateMois.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDateMois.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.lblDateMois.Location = new System.Drawing.Point(58, 86);
+            this.lblDateMois.Name = "lblDateMois";
+            this.lblDateMois.Size = new System.Drawing.Size(41, 18);
+            this.lblDateMois.TabIndex = 8;
+            this.lblDateMois.Text = "Mois";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.label5.Location = new System.Drawing.Point(341, 493);
+            this.label5.Location = new System.Drawing.Point(328, 505);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(82, 18);
             this.label5.TabIndex = 10;
             this.label5.Text = "Autres frais";
             // 
-            // dgvFraisForfais
+            // dgvFraisForfait
             // 
-            this.dgvFraisForfais.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvFraisForfais.Location = new System.Drawing.Point(260, 303);
-            this.dgvFraisForfais.Name = "dgvFraisForfais";
-            this.dgvFraisForfais.Size = new System.Drawing.Size(240, 150);
-            this.dgvFraisForfais.TabIndex = 11;
+            this.dgvFraisForfait.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvFraisForfait.Location = new System.Drawing.Point(202, 284);
+            this.dgvFraisForfait.Name = "dgvFraisForfait";
+            this.dgvFraisForfait.Size = new System.Drawing.Size(443, 146);
+            this.dgvFraisForfait.TabIndex = 11;
             // 
-            // dataGridView1
+            // dgvFraisHForfait
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(260, 527);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(240, 150);
-            this.dataGridView1.TabIndex = 12;
+            this.dgvFraisHForfait.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvFraisHForfait.Location = new System.Drawing.Point(162, 526);
+            this.dgvFraisHForfait.Name = "dgvFraisHForfait";
+            this.dgvFraisHForfait.Size = new System.Drawing.Size(423, 150);
+            this.dgvFraisHForfait.TabIndex = 12;
             // 
             // btnQuitter
             // 
@@ -161,29 +157,64 @@
             this.btnQuitter.UseVisualStyleBackColor = true;
             this.btnQuitter.Click += new System.EventHandler(this.btnQuitter_Click);
             // 
-            // cboVisiteur
+            // dgvTotal
             // 
-            this.cboVisiteur.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboVisiteur.FormattingEnabled = true;
-            this.cboVisiteur.Location = new System.Drawing.Point(137, 196);
-            this.cboVisiteur.Name = "cboVisiteur";
-            this.cboVisiteur.Size = new System.Drawing.Size(121, 21);
-            this.cboVisiteur.TabIndex = 14;
-            this.cboVisiteur.SelectedIndexChanged += new System.EventHandler(this.cboVisiteur_SelectedIndexChanged);
+            this.dgvTotal.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvTotal.Location = new System.Drawing.Point(748, 546);
+            this.dgvTotal.Name = "dgvTotal";
+            this.dgvTotal.Size = new System.Drawing.Size(103, 45);
+            this.dgvTotal.TabIndex = 15;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.label6.Location = new System.Drawing.Point(366, 263);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(114, 18);
+            this.label6.TabIndex = 16;
+            this.label6.Text = "Frais forfaitaires";
+            this.label6.Click += new System.EventHandler(this.label6_Click);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.label7.Location = new System.Drawing.Point(779, 525);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(41, 18);
+            this.label7.TabIndex = 17;
+            this.label7.Text = "Total";
+            this.label7.Click += new System.EventHandler(this.label7_Click);
+            // 
+            // lblNomPrenom
+            // 
+            this.lblNomPrenom.AutoSize = true;
+            this.lblNomPrenom.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNomPrenom.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.lblNomPrenom.Location = new System.Drawing.Point(134, 200);
+            this.lblNomPrenom.Name = "lblNomPrenom";
+            this.lblNomPrenom.Size = new System.Drawing.Size(41, 18);
+            this.lblNomPrenom.TabIndex = 19;
+            this.lblNomPrenom.Text = "Mois";
             // 
             // etatsDeFraisEngages
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(901, 750);
-            this.Controls.Add(this.cboVisiteur);
+            this.Controls.Add(this.lblNomPrenom);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.dgvTotal);
             this.Controls.Add(this.btnQuitter);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.dgvFraisForfais);
+            this.Controls.Add(this.dgvFraisHForfait);
+            this.Controls.Add(this.dgvFraisForfait);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.lblNom);
+            this.Controls.Add(this.lblDateMois);
             this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -193,9 +224,12 @@
             this.Load += new System.EventHandler(this.etatsDeFraisEngages_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvFraisForfais)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvFraisForfait)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvFraisHForfait)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsVisiteur)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsAutresFrais)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsTotal)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTotal)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -206,14 +240,18 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Label lblNom;
+        private System.Windows.Forms.Label lblDateMois;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.DataGridView dgvFraisForfais;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvFraisForfait;
+        private System.Windows.Forms.DataGridView dgvFraisHForfait;
         private System.Windows.Forms.Button btnQuitter;
-        private System.Windows.Forms.ComboBox cboVisiteur;
         private System.Windows.Forms.BindingSource bsVisiteur;
+        private System.Windows.Forms.BindingSource bsAutresFrais;
+        private System.Windows.Forms.BindingSource bsTotal;
+        private System.Windows.Forms.DataGridView dgvTotal;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label lblNomPrenom;
     }
 }

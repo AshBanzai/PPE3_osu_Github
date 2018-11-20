@@ -43,8 +43,8 @@ namespace PPE3_osu_Github
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<Visiteur> Visiteur { get; set; }
         public virtual DbSet<Suivi> Suivi { get; set; }
-        public virtual DbSet<lesfraisforfaitaires> lesfraisforfaitaires { get; set; }
         public virtual DbSet<lesautresfrais> lesautresfrais { get; set; }
+        public virtual DbSet<lesfraisforfaitaires> lesfraisforfaitaires { get; set; }
         public virtual DbSet<total> total { get; set; }
     }
 }

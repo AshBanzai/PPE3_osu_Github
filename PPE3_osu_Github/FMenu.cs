@@ -28,7 +28,7 @@ namespace PPE3_osu_Github
      
         private void button3_Click(object sender, EventArgs e)
         {
-            etatsDeFraisEngages f = new etatsDeFraisEngages(identifiant);
+            etatsDeFraisEngages f = new etatsDeFraisEngages(this.identifiant);
             f.Show();
         }
 
