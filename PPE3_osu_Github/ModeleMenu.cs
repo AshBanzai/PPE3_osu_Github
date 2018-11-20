@@ -13,17 +13,5 @@ namespace PPE3_osu_Github
         {
             maConnexion = new OSUppe3Entities1();
         }
-        public static string RenvoyerIdVisiteur(string idVisiteur)
-        {
-            string vretour = "";
-            var LQuery = maConnexion.Visiteur.ToList()
-                           .Where(x => x.identifiant == idVisiteur)
-                           .Select(x => new { x.idVisiteur });
-            foreach (var v in LQuery)
-            {
-                vretour = v.idVisiteur.ToString();
-            }
-            return vretour;
-        }
     }
 }
