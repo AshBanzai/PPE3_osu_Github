@@ -28,7 +28,7 @@ namespace PPE3_osu_Github
      
         private void button3_Click(object sender, EventArgs e)
         {
-            etatsDeFraisEngages f = new etatsDeFraisEngages();
+            etatsDeFraisEngages f = new etatsDeFraisEngages(idVisiteur);
             f.Show();
         }
 
@@ -39,7 +39,6 @@ namespace PPE3_osu_Github
 
         private void FMenu_Load(object sender, EventArgs e)
         {
-            label1.Text = idVisiteur;
         }
 
         private void label1_Click(object sender, EventArgs e)

@@ -12,29 +12,27 @@ namespace PPE3_osu_Github
 {
     public partial class etatsDeFraisEngages : Form
     {
+        string idVisiteur ="a13";
         private bool fermeture = false;
         private OSUppe3Entities1 maConnexion;
-        public etatsDeFraisEngages()
+        public etatsDeFraisEngages(string unIdVisiteur)
         {
+            //this.idVisiteur = unIdVisiteur;
             InitializeComponent();
-            maConnexion = new OSUppe3Entities1();
+            maConnexion = new OSUppe3Entities1();            
             //change le label mois par le mois de la demande
             //lblMatricule.Text = Modele3.DonneNomVisiteur("uipol");
-            cboVisiteur.ValueMember = "nom";
-            cboVisiteur.DisplayMember = "prenom";
-            bsVisiteur.DataSource = Modele2.MedecinsSuivis();     //MedecinsSuivis();
-            cboVisiteur.DataSource = bsVisiteur;
+           
         }
-       
-
-        private void label1_Click(object sender, EventArgs e)
+               private void label1_Click(object sender, EventArgs e)
         {
-
         }
-
         private void etatsDeFraisEngages_Load(object sender, EventArgs e)
         {
-
+            cboVisiteur.ValueMember = "idVisiteur";
+            cboVisiteur.DisplayMember = "libelle";
+            bsVisiteur.DataSource = Modele3.listefrais(idVisiteur);
+            cboVisiteur.DataSource = bsVisiteur;
         }
 
         private void btnQuitter_Click(object sender, EventArgs e)
@@ -45,30 +43,19 @@ namespace PPE3_osu_Github
 
         private void cboVisiteur_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (!fermeture)
-            {
-                //bsVisiteur.DataSource = Modele3.ListeFraisForfaits(Modele3.DonneIdVisiteur(cboVisiteur.SelectedValue.ToString()));
+            if (fermeture) return;              
+                               
+                bsVisiteur.DataSource = Modele3.listefrais(idVisiteur);
                 dgvFraisForfais.DataSource = bsVisiteur;
+                dgvFraisForfais.Columns["libelle"].HeaderText = "libelle";
+                dgvFraisForfais.Columns["libelle"].Width = 30;
+                dgvFraisForfais.Columns["quantite"].HeaderText = "quantite";
+                dgvFraisForfais.Columns["quantite"].Width = 70;
+                dgvFraisForfais.Columns["montant"].HeaderText = "montant";
+                dgvFraisForfais.Columns["montant"].Width = 200;
+                dgvFraisForfais.Columns["total"].HeaderText = "total";
+                dgvFraisForfais.Columns["total"].Width = 250;
 
-                for (int i = 0; i < dgvFraisForfais.ColumnCount; i++)
-                {
-                    dgvFraisForfais.Columns[i].Visible = false;
-                }
-                dgvFraisForfais.Columns[0].Visible = true;
-                dgvFraisForfais.Columns[0].HeaderText = "NOM";
-                dgvFraisForfais.Columns[1].Visible = true;
-                dgvFraisForfais.Columns[1].HeaderText = "PRENOM";
-                dgvFraisForfais.Columns[2].Visible = true;
-                dgvFraisForfais.Columns[2].HeaderText = "STYLE";
-                dgvFraisForfais.Columns[3].Visible = true;
-                dgvFraisForfais.Columns[3].HeaderText = "Né le";
-                dgvFraisForfais.Columns[4].Visible = true;
-                dgvFraisForfais.Columns[4].HeaderText = "Mort le";
-                dgvFraisForfais.Columns[5].Visible = true;
-                dgvFraisForfais.Columns[5].HeaderText = "Informations";
-                // dgvCompositeur.Columns[6].Visible = false;
-
-            }
         }
     }
 }
