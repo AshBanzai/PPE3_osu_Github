@@ -214,6 +214,7 @@
             this.Controls.Add(this.label1);
             this.Name = "FProfil";
             this.Text = "FProfil";
+            this.Load += new System.EventHandler(this.FProfil_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

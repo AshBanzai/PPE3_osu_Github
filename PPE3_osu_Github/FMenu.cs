@@ -46,5 +46,11 @@ namespace PPE3_osu_Github
         {
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            FProfil f = new FProfil();
+            f.Show();
+        }
     }
 }

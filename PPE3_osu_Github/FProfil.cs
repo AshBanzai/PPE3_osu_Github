@@ -27,5 +27,10 @@ namespace PPE3_osu_Github
             Form.ActiveForm.Close();
         
     }
+
+        private void FProfil_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
