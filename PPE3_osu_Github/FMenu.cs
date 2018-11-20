@@ -21,7 +21,7 @@ namespace PPE3_osu_Github
 
         private void button2_Click(object sender, EventArgs e)
         {
-            VoirLesRapports f = new VoirLesRapports(ModeleMenu.RenvoyerIdVisiteur(identifiant));
+            VoirLesRapports f = new VoirLesRapports(this.identifiant);
             f.Show();
         }
 

@@ -18,6 +18,7 @@ namespace PPE3_osu_Github
             Application.SetCompatibleTextRenderingDefault(false);
             Modele.init();
             Modele2.init();
+            Modele3.init();
             Application.Run(new FConnexion());
         }
     }

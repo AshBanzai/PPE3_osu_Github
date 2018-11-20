@@ -38,7 +38,8 @@ namespace PPE3_osu_Github
             bool test = Modele.valideConnexion(id, mdp);
             if ( test == true)
             {
-                FMenu f = new FMenu(id);
+                string identifiant = Modele2.RenvoyerIdVisiteur(id);
+                FMenu f = new FMenu(identifiant);
                 f.Show();
             }
             else
