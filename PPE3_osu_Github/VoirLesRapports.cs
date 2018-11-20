@@ -33,7 +33,6 @@ namespace PPE3_osu_Github
             if (fermeture) return;
             bsListeDesRapports.DataSource = Modele2.ListeRapport(idVisiteur);
             dgvListeDesRapports.DataSource = bsListeDesRapports;
-
             dgvListeDesRapports.Columns["idRapport"].HeaderText = "Numéro";
             dgvListeDesRapports.Columns["idRapport"].Width = 30;
             dgvListeDesRapports.Columns["dateRapport"].HeaderText = "Date";

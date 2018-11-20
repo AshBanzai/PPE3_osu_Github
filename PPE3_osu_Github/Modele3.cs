@@ -16,12 +16,43 @@ namespace PPE3_osu_Github
             /* Instantiation d’un objet de la classe typée chaine de connexion SqlConnection */
             maConnexion = new OSUppe3Entities1();
         }
-        public static List<fichefrais> listefrais()
+        public static Object listefrais(string idVisiteur)
         {
-            return maConnexion.fichefrais.ToList();
+
+            var LQuery = maConnexion.lesfraisforfaitaires.ToList()
+                           .Where(x => x.idVisiteur == idVisiteur)
+                           .Select(x => new { x.libelle, x.quantite, x.montant, x.total })                          
+                           .OrderBy(x => x.libelle);
+            return LQuery.ToList();
 
 
         }
+        public static Object DonneNomVisiteur()
+        {
+            var LQuery = maConnexion.Visiteur.ToList()
+                           .Select(x => new { x.nom})
+                           .OrderBy(x => x.nom);
+            return LQuery.ToList();
+        }
+        public static Object DonneIdVisiteur(string nom)
+        {
+            var LQuery = maConnexion.Visiteur.ToList()
+                .Where(x => x.nom == x.nom)
+                .Select(x => new { x.idVisiteur });
+            return LQuery.ToList();
+
+        }
+        /*public static Object ListeFraisForfais(string idVisiteur)
+        {
+            var LQuery = maConnexion.fichefrais.ToList()
+                           .Where(x => x.idVisiteur == idVisiteur and x.idVisiteur)
+                           .Select(x => new { x. })
+                           .OrderBy(x => x.nomCompositeur);
+            return LQuery.ToList();
+
+        }*/
+
+
 
     }
 }

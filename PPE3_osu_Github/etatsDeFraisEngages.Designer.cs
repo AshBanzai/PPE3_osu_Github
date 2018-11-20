@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -35,14 +36,17 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblNom = new System.Windows.Forms.Label();
-            this.lblMatricule = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.dgvFraisForfais = new System.Windows.Forms.DataGridView();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.btnQuitter = new System.Windows.Forms.Button();
+            this.cboVisiteur = new System.Windows.Forms.ComboBox();
+            this.bsVisiteur = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFraisForfais)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsVisiteur)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -120,17 +124,6 @@
             this.lblNom.TabIndex = 8;
             this.lblNom.Text = "Mois";
             // 
-            // lblMatricule
-            // 
-            this.lblMatricule.AutoSize = true;
-            this.lblMatricule.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMatricule.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.lblMatricule.Location = new System.Drawing.Point(134, 200);
-            this.lblMatricule.Name = "lblMatricule";
-            this.lblMatricule.Size = new System.Drawing.Size(41, 18);
-            this.lblMatricule.TabIndex = 9;
-            this.lblMatricule.Text = "Mois";
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -158,15 +151,36 @@
             this.dataGridView1.Size = new System.Drawing.Size(240, 150);
             this.dataGridView1.TabIndex = 12;
             // 
+            // btnQuitter
+            // 
+            this.btnQuitter.Location = new System.Drawing.Point(46, 488);
+            this.btnQuitter.Name = "btnQuitter";
+            this.btnQuitter.Size = new System.Drawing.Size(75, 23);
+            this.btnQuitter.TabIndex = 13;
+            this.btnQuitter.Text = "Quitter";
+            this.btnQuitter.UseVisualStyleBackColor = true;
+            this.btnQuitter.Click += new System.EventHandler(this.btnQuitter_Click);
+            // 
+            // cboVisiteur
+            // 
+            this.cboVisiteur.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboVisiteur.FormattingEnabled = true;
+            this.cboVisiteur.Location = new System.Drawing.Point(137, 196);
+            this.cboVisiteur.Name = "cboVisiteur";
+            this.cboVisiteur.Size = new System.Drawing.Size(121, 21);
+            this.cboVisiteur.TabIndex = 14;
+            this.cboVisiteur.SelectedIndexChanged += new System.EventHandler(this.cboVisiteur_SelectedIndexChanged);
+            // 
             // etatsDeFraisEngages
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(901, 750);
+            this.Controls.Add(this.cboVisiteur);
+            this.Controls.Add(this.btnQuitter);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.dgvFraisForfais);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.lblMatricule);
             this.Controls.Add(this.lblNom);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.label4);
@@ -181,6 +195,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFraisForfais)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsVisiteur)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -194,9 +209,11 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label lblNom;
-        private System.Windows.Forms.Label lblMatricule;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.DataGridView dgvFraisForfais;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button btnQuitter;
+        private System.Windows.Forms.ComboBox cboVisiteur;
+        private System.Windows.Forms.BindingSource bsVisiteur;
     }
 }

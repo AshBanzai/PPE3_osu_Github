@@ -96,6 +96,12 @@
     <Compile Include="Laboratoire.cs">
       <DependentUpon>Model2.tt</DependentUpon>
     </Compile>
+    <Compile Include="lesautresfrais.cs">
+      <DependentUpon>Model2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="lesfraisforfaitaires.cs">
+      <DependentUpon>Model2.tt</DependentUpon>
+    </Compile>
     <Compile Include="LigneFraisForfait.cs">
       <DependentUpon>Model2.tt</DependentUpon>
     </Compile>
@@ -151,6 +157,9 @@
       <DependentUpon>Model2.tt</DependentUpon>
     </Compile>
     <Compile Include="sysdiagrams.cs">
+      <DependentUpon>Model2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="total.cs">
       <DependentUpon>Model2.tt</DependentUpon>
     </Compile>
     <Compile Include="Visiteur.cs">
