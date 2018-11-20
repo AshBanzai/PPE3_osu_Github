@@ -12,9 +12,11 @@ namespace PPE3_osu_Github
 {
     public partial class FProfil : Form
     {
-        public FProfil()
+        string identifiant;
+        public FProfil(string unIdentifiant)
         {
             InitializeComponent();
+            this.identifiant = unIdentifiant;
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -30,7 +32,7 @@ namespace PPE3_osu_Github
 
         private void FProfil_Load(object sender, EventArgs e)
         {
-
+            lblPseudo.Text = identifiant;
         }
     }
 }

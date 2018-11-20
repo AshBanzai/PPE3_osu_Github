@@ -12,23 +12,24 @@ namespace PPE3_osu_Github
 {
     public partial class FMenu : Form
     {
-        string identifiant;
-        public FMenu(string unIdentifiant)
+        string id, identifiant;
+        public FMenu(string unId, string unIdentifiant)
         {
+            this.id = unId;
             this.identifiant = unIdentifiant;
             InitializeComponent();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            VoirLesRapports f = new VoirLesRapports(this.identifiant);
+            VoirLesRapports f = new VoirLesRapports(id);
             f.Show();
         }
 
      
         private void button3_Click(object sender, EventArgs e)
         {
-            etatsDeFraisEngages f = new etatsDeFraisEngages(identifiant);
+            etatsDeFraisEngages f = new etatsDeFraisEngages(id);
             f.Show();
         }
 
@@ -47,9 +48,10 @@ namespace PPE3_osu_Github
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+
+        private void button1_Click_1(object sender, EventArgs e)
         {
-            FProfil f = new FProfil();
+            FProfil f = new FProfil(identifiant);
             f.Show();
         }
     }
