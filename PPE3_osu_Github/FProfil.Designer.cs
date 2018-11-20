@@ -61,9 +61,9 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(117, 53);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(35, 13);
+            this.label2.Size = new System.Drawing.Size(39, 13);
             this.label2.TabIndex = 1;
-            this.label2.Text = "label2";
+            this.label2.Text = "labe45";
             // 
             // button1
             // 
@@ -214,6 +214,7 @@
             this.Controls.Add(this.label1);
             this.Name = "FProfil";
             this.Text = "FProfil";
+            this.Load += new System.EventHandler(this.FProfil_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

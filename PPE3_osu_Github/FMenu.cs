@@ -28,7 +28,7 @@ namespace PPE3_osu_Github
      
         private void button3_Click(object sender, EventArgs e)
         {
-            etatsDeFraisEngages f = new etatsDeFraisEngages(this.identifiant);
+            etatsDeFraisEngages f = new etatsDeFraisEngages(identifiant);
             f.Show();
         }
 
@@ -45,6 +45,12 @@ namespace PPE3_osu_Github
         private void label1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            FProfil f = new FProfil();
+            f.Show();
         }
     }
 }
