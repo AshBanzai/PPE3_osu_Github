@@ -16,7 +16,6 @@ namespace PPE3_osu_Github
         {
             InitializeComponent();
             
-
         }
         public static void ThreadProc()
         {
