@@ -19,7 +19,7 @@ namespace PPE3_osu_Github
         public static Object Suivi(string idVisiteur)
         {
             var LQuery = maConnexion.Suivi.ToList()
-                           .Where(x => x.identifiant == idVisiteur)
+                           .Where(x => x.idVisiteur == idVisiteur)
                            .Select(x => new { x.nom_prenom });
             return LQuery.ToList();
         }
