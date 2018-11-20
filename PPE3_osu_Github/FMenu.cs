@@ -12,16 +12,16 @@ namespace PPE3_osu_Github
 {
     public partial class FMenu : Form
     {
-        string idVisiteur;
-        public FMenu(string unIdVisiteur)
+        string identifiant;
+        public FMenu(string unIdentifiant)
         {
-            this.idVisiteur = unIdVisiteur;
+            this.identifiant = unIdentifiant;
             InitializeComponent();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            VoirLesRapports f = new VoirLesRapports(idVisiteur);
+            VoirLesRapports f = new VoirLesRapports(ModeleMenu.RenvoyerIdVisiteur(identifiant));
             f.Show();
         }
 
@@ -39,7 +39,7 @@ namespace PPE3_osu_Github
 
         private void FMenu_Load(object sender, EventArgs e)
         {
-            label1.Text = idVisiteur;
+
         }
 
         private void label1_Click(object sender, EventArgs e)

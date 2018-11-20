@@ -120,7 +120,7 @@
     <Compile Include="Modele.cs" />
     <Compile Include="Modele2.cs" />
     <Compile Include="Modele3.cs" />
-    <Compile Include="modelefanch.cs" />
+    <Compile Include="ModeleMenu.cs" />
     <Compile Include="MOTIF.cs">
       <DependentUpon>Model2.tt</DependentUpon>
     </Compile>

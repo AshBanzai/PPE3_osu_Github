@@ -15,6 +15,7 @@ namespace PPE3_osu_Github
             maConnexion = new OSUppe3Entities1();
         }
 
+
         public static Object Suivi(string idVisiteur)
         {
             var LQuery = maConnexion.Suivi.ToList()

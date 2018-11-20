@@ -178,6 +178,21 @@
           <Property Name="password" Type="varchar" MaxLength="128" Nullable="false" />
         </EntityType>
         <!--Erreurs détectées durant la génération :
+avertissement 6013: Aucune clé primaire n'est définie pour la table/vue 'OSUppe3.dbo.lesautresfrais' ; en outre, aucune clé primaire valide n'a pu être déduite. Cette table/vue a été exclue. Pour utiliser l'entité, vous devez passer en revue votre schéma, ajouter les clés appropriées et supprimer le commentaire associé.
+        <EntityType Name="lesautresfrais">
+          <Property Name="libelle" Type="varchar" MaxLength="100" />
+          <Property Name="montant" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="date" Type="date" />
+        </EntityType>-->
+        <!--Erreurs détectées durant la génération :
+avertissement 6013: Aucune clé primaire n'est définie pour la table/vue 'OSUppe3.dbo.lesfraisforfaitaires' ; en outre, aucune clé primaire valide n'a pu être déduite. Cette table/vue a été exclue. Pour utiliser l'entité, vous devez passer en revue votre schéma, ajouter les clés appropriées et supprimer le commentaire associé.
+        <EntityType Name="lesfraisforfaitaires">
+          <Property Name="libelle" Type="char" MaxLength="20" />
+          <Property Name="quantite" Type="int" />
+          <Property Name="montant" Type="decimal" Precision="5" Scale="2" />
+          <Property Name="total" Type="decimal" Precision="16" Scale="2" />
+        </EntityType>-->
+        <!--Erreurs détectées durant la génération :
 avertissement 6002: La table/vue 'OSUppe3.dbo.Suivi' n'a pas de clé primaire définie. La clé a été déduite et la définition a été créée en tant que table/vue en lecture seule.-->
         <EntityType Name="Suivi">
           <Key>
@@ -191,6 +206,11 @@ avertissement 6002: La table/vue 'OSUppe3.dbo.Suivi' n'a pas de clé primaire d�
           <Property Name="idVisiteur" Type="char" MaxLength="3" Nullable="false" />
           <Property Name="identifiant" Type="varchar" MaxLength="16" Nullable="false" />
         </EntityType>
+        <!--Erreurs détectées durant la génération :
+avertissement 6013: Aucune clé primaire n'est définie pour la table/vue 'OSUppe3.dbo.total' ; en outre, aucune clé primaire valide n'a pu être déduite. Cette table/vue a été exclue. Pour utiliser l'entité, vous devez passer en revue votre schéma, ajouter les clés appropriées et supprimer le commentaire associé.
+        <EntityType Name="total">
+          <Property Name="total" Type="decimal" Precision="17" Scale="2" />
+        </EntityType>-->
         <Association Name="FK__fichefrai__idEta__1ED998B2">
           <End Role="Etat" Type="Self.Etat" Multiplicity="0..1" />
           <End Role="fichefrais" Type="Self.fichefrais" Multiplicity="*" />

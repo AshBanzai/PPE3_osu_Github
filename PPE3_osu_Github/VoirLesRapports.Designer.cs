@@ -38,6 +38,7 @@
             this.bsListeDesRapports = new System.Windows.Forms.BindingSource(this.components);
             this.bsMedicamentsPrescris = new System.Windows.Forms.BindingSource(this.components);
             this.dgvListeDesMedicaments = new System.Windows.Forms.DataGridView();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListeDesRapports)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsMedecinsSuivis)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsListeDesRapports)).BeginInit();
@@ -103,11 +104,21 @@
             this.dgvListeDesMedicaments.Size = new System.Drawing.Size(283, 124);
             this.dgvListeDesMedicaments.TabIndex = 11;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(342, 28);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.TabIndex = 12;
+            this.label1.Text = "label1";
+            // 
             // VoirLesRapports
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(635, 468);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.dgvListeDesMedicaments);
             this.Controls.Add(this.lblLesMedicamentsPrescrits);
             this.Controls.Add(this.dgvListeDesRapports);
@@ -139,5 +150,6 @@
         private System.Windows.Forms.BindingSource bsListeDesRapports;
         private System.Windows.Forms.BindingSource bsMedicamentsPrescris;
         private System.Windows.Forms.DataGridView dgvListeDesMedicaments;
+        private System.Windows.Forms.Label label1;
     }
 }
