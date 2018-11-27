@@ -10,19 +10,27 @@ using System.Windows.Forms;
 
 namespace PPE3_osu_Github
 {
-    public partial class etatsDeFraisEngages : Form
+    public partial class VoirLesFrais : Form
     {
-        string idVisiteur="a13";
+        // this.idVisiteur = unIdVisiteur;
+        // string idVisiteur="a13";
+        string idVisiteur;
         private bool fermeture = false;
+        private lesfraisforfaitaires fraisChoisi; 
+        
+
         private OSUppe3Entities1 maConnexion;
-        public etatsDeFraisEngages(string unIdVisiteur)
+        public VoirLesFrais(string unIdVisiteur)
         {
             
             InitializeComponent();
-            maConnexion = new OSUppe3Entities1();            
+            this.idVisiteur = unIdVisiteur;
+            //string idVisiteur = "a13";
+            maConnexion = new OSUppe3Entities1();
+            fraisChoisi = new lesfraisforfaitaires();
             //change le label mois par le mois de la demande
             //lblMatricule.Text = Modele3.DonneNomVisiteur("uipol");
-           
+
         }
                private void label1_Click(object sender, EventArgs e)
         {
@@ -30,15 +38,10 @@ namespace PPE3_osu_Github
         private void etatsDeFraisEngages_Load(object sender, EventArgs e)
         {
           
-            bsVisiteur.DataSource = Modele3.listefrais(idVisiteur);
-            bsAutresFrais.DataSource = Modele3.listeautresfrais(idVisiteur);
-            bsTotal.DataSource = Modele3.totalfrais(idVisiteur);
+           
             lblNomPrenom.Text = Modele3.RenvoyerNomVisiteur(idVisiteur);
             DateTime thisDay = DateTime.Today;
             lblDateMois.Text = thisDay.ToString("D");
-            
-
-
 
             bsVisiteur.DataSource = Modele3.listefrais(idVisiteur);
             dgvFraisForfait.DataSource = bsVisiteur;
@@ -51,7 +54,6 @@ namespace PPE3_osu_Github
             dgvFraisForfait.Columns["total"].HeaderText = "total";
             dgvFraisForfait.Columns["total"].Width = 50;
 
-
             bsAutresFrais.DataSource = Modele3.listeautresfrais(idVisiteur);
             dgvFraisHForfait.DataSource = bsAutresFrais;
             dgvFraisHForfait.Columns["libelle"].HeaderText = "libelle";
@@ -61,10 +63,18 @@ namespace PPE3_osu_Github
             dgvFraisHForfait.Columns["montant"].HeaderText = "montant";
             dgvFraisHForfait.Columns["montant"].Width = 60;
 
+
             bsTotal.DataSource = Modele3.totalfrais(idVisiteur);
             dgvTotal.DataSource = bsTotal;
             dgvTotal.Columns["total1"].HeaderText = "Total";
             dgvTotal.Columns["total1"].Width = 60;
+
+            //int fraisChoisi = dgvFraisForfait.CurrentRow.Index;
+
+            //System.Type type = bsVisiteur.Current.GetType();
+            //int id = (int)type.GetProperty("idVisiteur").GetValue(bsVisiteur.Current, null);
+           // lblDateMois.Text = fraisChoisi.ToString();
+
         }
 
         private void btnQuitter_Click(object sender, EventArgs e)
@@ -91,6 +101,12 @@ namespace PPE3_osu_Github
         private void label7_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void dgvFraisForfait_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
+            
         }
     }
 }

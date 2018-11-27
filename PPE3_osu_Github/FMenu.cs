@@ -30,7 +30,7 @@ namespace PPE3_osu_Github
      
         private void button3_Click(object sender, EventArgs e)
         {
-            etatsDeFraisEngages f = new etatsDeFraisEngages(id);
+           MenuFrais f = new MenuFrais(id);
             f.Show();
         }
 

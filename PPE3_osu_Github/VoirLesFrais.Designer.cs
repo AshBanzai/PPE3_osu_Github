@@ -1,6 +1,6 @@
 ﻿namespace PPE3_osu_Github
 {
-    partial class etatsDeFraisEngages
+    partial class VoirLesFrais
     {
         /// <summary>
         /// Required designer variable.
@@ -32,28 +32,28 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblDateMois = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.dgvFraisForfait = new System.Windows.Forms.DataGridView();
             this.dgvFraisHForfait = new System.Windows.Forms.DataGridView();
             this.btnQuitter = new System.Windows.Forms.Button();
-            this.bsVisiteur = new System.Windows.Forms.BindingSource(this.components);
-            this.bsAutresFrais = new System.Windows.Forms.BindingSource(this.components);
-            this.bsTotal = new System.Windows.Forms.BindingSource(this.components);
             this.dgvTotal = new System.Windows.Forms.DataGridView();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.lblNomPrenom = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.bsVisiteur = new System.Windows.Forms.BindingSource(this.components);
+            this.bsAutresFrais = new System.Windows.Forms.BindingSource(this.components);
+            this.bsTotal = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvFraisForfait)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFraisHForfait)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTotal)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsVisiteur)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsAutresFrais)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsTotal)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvTotal)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -91,24 +91,6 @@
             this.label3.TabIndex = 4;
             this.label3.Text = "Visiteur";
             // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::PPE3_osu_Github.Properties.Resources.Signature;
-            this.pictureBox2.Location = new System.Drawing.Point(635, 619);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(254, 119);
-            this.pictureBox2.TabIndex = 7;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::PPE3_osu_Github.Properties.Resources.petit_logo;
-            this.pictureBox1.Location = new System.Drawing.Point(395, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(138, 92);
-            this.pictureBox1.TabIndex = 5;
-            this.pictureBox1.TabStop = false;
-            // 
             // lblDateMois
             // 
             this.lblDateMois.AutoSize = true;
@@ -136,8 +118,10 @@
             this.dgvFraisForfait.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvFraisForfait.Location = new System.Drawing.Point(202, 284);
             this.dgvFraisForfait.Name = "dgvFraisForfait";
+            this.dgvFraisForfait.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvFraisForfait.Size = new System.Drawing.Size(443, 146);
             this.dgvFraisForfait.TabIndex = 11;
+            this.dgvFraisForfait.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFraisForfait_CellContentClick);
             // 
             // dgvFraisHForfait
             // 
@@ -162,7 +146,7 @@
             this.dgvTotal.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvTotal.Location = new System.Drawing.Point(748, 546);
             this.dgvTotal.Name = "dgvTotal";
-            this.dgvTotal.Size = new System.Drawing.Size(103, 45);
+            this.dgvTotal.Size = new System.Drawing.Size(200, 80);
             this.dgvTotal.TabIndex = 15;
             // 
             // label6
@@ -200,7 +184,25 @@
             this.lblNomPrenom.TabIndex = 19;
             this.lblNomPrenom.Text = "Mois";
             // 
-            // etatsDeFraisEngages
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::PPE3_osu_Github.Properties.Resources.Signature;
+            this.pictureBox2.Location = new System.Drawing.Point(635, 619);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(254, 119);
+            this.pictureBox2.TabIndex = 7;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::PPE3_osu_Github.Properties.Resources.petit_logo;
+            this.pictureBox1.Location = new System.Drawing.Point(395, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(138, 92);
+            this.pictureBox1.TabIndex = 5;
+            this.pictureBox1.TabStop = false;
+            // 
+            // VoirLesFrais
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -219,17 +221,17 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Name = "etatsDeFraisEngages";
+            this.Name = "VoirLesFrais";
             this.Text = "etatsDeFraisEngages";
             this.Load += new System.EventHandler(this.etatsDeFraisEngages_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFraisForfait)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFraisHForfait)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTotal)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsVisiteur)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsAutresFrais)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsTotal)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvTotal)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
