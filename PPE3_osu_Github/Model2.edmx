@@ -194,7 +194,7 @@ avertissement 6002: La table/vue 'OSUppe3.dbo.lesfraisforfaitaires' n'a pas de c
           <Key>
             <PropertyRef Name="idVisiteur" />
           </Key>
-          <Property Name="libelle" Type="char" MaxLength="20" />
+          <Property Name="libelle" Type="char" MaxLength="20" Nullable="false" />
           <Property Name="quantite" Type="int" />
           <Property Name="idVisiteur" Type="char" MaxLength="3" Nullable="false" />
           <Property Name="montant" Type="decimal" Precision="5" Scale="2" />
@@ -1117,7 +1117,7 @@ avertissement 6002: La table/vue 'OSUppe3.dbo.total' n'a pas de cl√© primaire d√
           <Key>
             <PropertyRef Name="idVisiteur" />
           </Key>
-          <Property Name="libelle" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
+          <Property Name="libelle" Type="String" MaxLength="20" FixedLength="true" Unicode="false" Nullable="false" />
           <Property Name="quantite" Type="Int32" />
           <Property Name="idVisiteur" Type="String" Nullable="false" MaxLength="3" FixedLength="true" Unicode="false" />
           <Property Name="montant" Type="Decimal" Precision="5" Scale="2" />

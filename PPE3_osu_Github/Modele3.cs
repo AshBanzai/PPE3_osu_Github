@@ -19,16 +19,25 @@ namespace PPE3_osu_Github
         public static Object listefrais(string idVisiteur)
         {
 
-            var LQuery = maConnexion.lesfraisforfaitaires.ToList()
+            var LQuery = maConnexion.lesfraisforfaitaires.AsNoTracking().ToList()
                            .Where(x => x.idVisiteur == idVisiteur)
-                           .Select(x => new { x.libelle, x.quantite, x.montant, x.total })                          
+                           .Select(x => new { x.libelle, x.quantite, x.montant, x.total })
+                           .OrderBy(x => x.libelle);
+            return LQuery.ToList();
+        }
+        public static Object retournefrais(string idVisiteur)
+        {
+
+            var LQuery = maConnexion.lesfraisforfaitaires.AsNoTracking().ToList()
+                           .Where(x => x.idVisiteur == idVisiteur)
+                           .Select(x => new { x.libelle, x.quantite, x.montant, x.total })
                            .OrderBy(x => x.libelle);
             return LQuery.ToList();
         }
         public static Object listeautresfrais(string idVisiteur)
         {
 
-            var LQuery = maConnexion.lesautresfrais.ToList()
+            var LQuery = maConnexion.lesautresfrais.AsNoTracking().ToList()
                            .Where(x => x.idVisiteur == idVisiteur)
                            .Select(x => new { x.libelle, x.montant, x.date})
                            .OrderBy(x => x.libelle);
