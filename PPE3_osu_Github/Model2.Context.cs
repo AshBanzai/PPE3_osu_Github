@@ -46,5 +46,6 @@ namespace PPE3_osu_Github
         public virtual DbSet<lesautresfrais> lesautresfrais { get; set; }
         public virtual DbSet<lesfraisforfaitaires> lesfraisforfaitaires { get; set; }
         public virtual DbSet<total> total { get; set; }
+        public virtual DbSet<MedicamentOffert> MedicamentOffert { get; set; }
     }
 }

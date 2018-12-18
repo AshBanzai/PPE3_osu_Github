@@ -201,6 +201,26 @@ avertissement 6002: La table/vue 'OSUppe3.dbo.lesfraisforfaitaires' n'a pas de c
           <Property Name="total" Type="decimal" Precision="16" Scale="2" />
         </EntityType>
         <!--Erreurs détectées durant la génération :
+avertissement 6002: La table/vue 'OSUppe3.dbo.MedicamentOffert' n'a pas de clé primaire définie. La clé a été déduite et la définition a été créée en tant que table/vue en lecture seule.-->
+        <EntityType Name="MedicamentOffert">
+          <Key>
+            <PropertyRef Name="idRapport" />
+            <PropertyRef Name="idMedecin" />
+            <PropertyRef Name="nom" />
+            <PropertyRef Name="prenom" />
+            <PropertyRef Name="adresse" />
+            <PropertyRef Name="departement" />
+          </Key>
+          <Property Name="idRapport" Type="int" Nullable="false" />
+          <Property Name="idMedecin" Type="int" Nullable="false" />
+          <Property Name="nom" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="prenom" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="adresse" Type="varchar" MaxLength="80" Nullable="false" />
+          <Property Name="tel" Type="varchar" MaxLength="15" />
+          <Property Name="idSpecialite" Type="char" MaxLength="3" />
+          <Property Name="departement" Type="int" Nullable="false" />
+        </EntityType>
+        <!--Erreurs détectées durant la génération :
 avertissement 6002: La table/vue 'OSUppe3.dbo.Suivi' n'a pas de clé primaire définie. La clé a été déduite et la définition a été créée en tant que table/vue en lecture seule.-->
         <EntityType Name="Suivi">
           <Key>
@@ -478,6 +498,18 @@ avertissement 6002: La table/vue 'OSUppe3.dbo.total' n'a pas de clé primaire d�
     [lesfraisforfaitaires].[montant] AS [montant], 
     [lesfraisforfaitaires].[total] AS [total]
     FROM [dbo].[lesfraisforfaitaires] AS [lesfraisforfaitaires]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="MedicamentOffert" EntityType="Self.MedicamentOffert" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [MedicamentOffert].[idRapport] AS [idRapport], 
+    [MedicamentOffert].[idMedecin] AS [idMedecin], 
+    [MedicamentOffert].[nom] AS [nom], 
+    [MedicamentOffert].[prenom] AS [prenom], 
+    [MedicamentOffert].[adresse] AS [adresse], 
+    [MedicamentOffert].[tel] AS [tel], 
+    [MedicamentOffert].[idSpecialite] AS [idSpecialite], 
+    [MedicamentOffert].[departement] AS [departement]
+    FROM [dbo].[MedicamentOffert] AS [MedicamentOffert]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="Suivi" EntityType="Self.Suivi" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
@@ -1058,6 +1090,7 @@ avertissement 6002: La table/vue 'OSUppe3.dbo.total' n'a pas de clé primaire d�
           <EntitySet Name="lesautresfrais" EntityType="OSUppe3Model.lesautresfrais" />
           <EntitySet Name="lesfraisforfaitaires" EntityType="OSUppe3Model.lesfraisforfaitaires" />
           <EntitySet Name="total" EntityType="OSUppe3Model.total" />
+          <EntitySet Name="MedicamentOffert" EntityType="OSUppe3Model.MedicamentOffert" />
         </EntityContainer>
         <EntityType Name="Suivi">
           <Key>
@@ -1096,6 +1129,24 @@ avertissement 6002: La table/vue 'OSUppe3.dbo.total' n'a pas de clé primaire d�
           </Key>
           <Property Name="idVisiteur" Type="String" Nullable="false" MaxLength="3" FixedLength="true" Unicode="false" />
           <Property Name="total1" Type="Decimal" Precision="17" Scale="2" />
+        </EntityType>
+        <EntityType Name="MedicamentOffert">
+          <Key>
+            <PropertyRef Name="idRapport" />
+            <PropertyRef Name="idMedecin" />
+            <PropertyRef Name="nom" />
+            <PropertyRef Name="prenom" />
+            <PropertyRef Name="adresse" />
+            <PropertyRef Name="departement" />
+          </Key>
+          <Property Name="idRapport" Type="Int32" Nullable="false" />
+          <Property Name="idMedecin" Type="Int32" Nullable="false" />
+          <Property Name="nom" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="prenom" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="adresse" Type="String" Nullable="false" MaxLength="80" FixedLength="false" Unicode="false" />
+          <Property Name="tel" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="idSpecialite" Type="String" MaxLength="3" FixedLength="true" Unicode="false" />
+          <Property Name="departement" Type="Int32" Nullable="false" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -1323,6 +1374,20 @@ avertissement 6002: La table/vue 'OSUppe3.dbo.total' n'a pas de clé primaire d�
               <MappingFragment StoreEntitySet="total">
                 <ScalarProperty Name="total1" ColumnName="total" />
                 <ScalarProperty Name="idVisiteur" ColumnName="idVisiteur" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MedicamentOffert">
+            <EntityTypeMapping TypeName="OSUppe3Model.MedicamentOffert">
+              <MappingFragment StoreEntitySet="MedicamentOffert">
+                <ScalarProperty Name="departement" ColumnName="departement" />
+                <ScalarProperty Name="idSpecialite" ColumnName="idSpecialite" />
+                <ScalarProperty Name="tel" ColumnName="tel" />
+                <ScalarProperty Name="adresse" ColumnName="adresse" />
+                <ScalarProperty Name="prenom" ColumnName="prenom" />
+                <ScalarProperty Name="nom" ColumnName="nom" />
+                <ScalarProperty Name="idMedecin" ColumnName="idMedecin" />
+                <ScalarProperty Name="idRapport" ColumnName="idRapport" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
